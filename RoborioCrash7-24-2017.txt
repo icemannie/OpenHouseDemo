@@ -1,0 +1,736 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xad3b2e26, pid=2575, tid=2891273312
+#
+# JRE version: Java(TM) SE Embedded Runtime Environment (8.0_06-b23) (build 1.8.0_06-b23)
+# Java VM: Java HotSpot(TM) Embedded Client VM (25.6-b23 mixed mode linux-arm )
+# Problematic frame:
+# C  [libopencv_core.so.3.1+0x131e26]  cv::Mat::create(int, int const*, int)+0x5c5
+#
+# Core dump written. Default location: //core or core.2575 (max size 2048 kB). To ensure a full core dump, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xacda5000):  JavaThread "WPILib Vision Thread" daemon [_thread_in_native, id=2603, stack(0xac506000,0xac556000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x6595a4ec
+
+Registers:
+  r0  = 0xadec18d0
+  r1  = 0xadea6307
+  r2  = 0x000000ba
+  r3  = 0x00000004
+  r4  = 0x00000008
+  r5  = 0xae00c160
+  r6  = 0xae00c160
+  r7  = 0xabba9230
+  r8  = 0xadec18a0
+  r9  = 0xadeadc00
+  r10 = 0x00000040
+  fp  = 0x00000000
+  r12 = 0xad42a74c
+  sp  = 0xac5544b8
+  lr  = 0xad3b2df9
+  pc  = 0xad3b2e26
+  cpsr = 0x00070030
+
+Top of Stack: (sp=0xac5544b8)
+0xac5544b8:   00000088 00000008 00000001 b6ebedb0
+0xac5544c8:   ac554790 53aab86c ad3f9810 ad3f9840
+0xac5544d8:   00000002 0000001c ad3f95d8 ad3f9808
+0xac5544e8:   ad3f95d8 ad3f9764 0000001c 00000010
+0xac5544f8:   adec111c fffffffe 000000ee 000000ca
+0xac554508:   ac5545f0 0000001c ffffffff ac554948
+0xac554518:   00000002 00000001 00000004 adec18a0
+0xac554528:   00000001 ad3cc721 00000000 00000000 
+
+Instructions: (pc=0xad3b2e26)
+0xad3b2e06:   3000f8d8 2250f64b 1004f8d8 0407f003
+0xad3b2e16:   002cf8d8 03c8f3c3 00643901 40e23301
+0xad3b2e26:   1021f850 0203f002 42994093 ae91f43f
+0xad3b2e36:   212bab12 46184eca 23004699 93139312 
+
+Register to memory mapping:
+
+  r0  = 0xadec18d0
+0xadec18d0 is an unknown value
+
+  r1  = 0xadea6307
+0xadea6307 is an unknown value
+
+  r2  = 0x000000ba
+0x000000ba is an unknown value
+
+  r3  = 0x00000004
+0x00000004 is an unknown value
+
+  r4  = 0x00000008
+0x00000008 is an unknown value
+
+  r5  = 0xae00c160
+0xae00c160 is an unknown value
+
+  r6  = 0xae00c160
+0xae00c160 is an unknown value
+
+  r7  = 0xabba9230
+0xabba9230 is an unknown value
+
+  r8  = 0xadec18a0
+0xadec18a0 is an unknown value
+
+  r9  = 0xadeadc00
+0xadeadc00 is an unknown value
+
+  r10 = 0x00000040
+0x00000040 is an unknown value
+
+  fp  = 0x00000000
+0x00000000 is an unknown value
+
+  r12 = 0xad42a74c
+0xad42a74c: <offset 0x1a974c> in /usr/local/frc/lib/libopencv_core.so.3.1 at 0xad281000
+
+  sp  = 0xac5544b8
+0xac5544b8 is pointing into the stack for thread: 0xacda5000
+
+  lr  = 0xad3b2df9
+0xad3b2df9: _ZN2cv3Mat6createEiPKii+0x598 in /usr/local/frc/lib/libopencv_core.so.3.1 at 0xad281000
+
+  pc  = 0xad3b2e26
+0xad3b2e26: _ZN2cv3Mat6createEiPKii+0x5c5 in /usr/local/frc/lib/libopencv_core.so.3.1 at 0xad281000
+
+
+
+Stack: [0xac506000,0xac556000],  sp=0xac5544b8,  free space=313k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libopencv_core.so.3.1+0x131e26]  cv::Mat::create(int, int const*, int)+0x5c5
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 428  org.opencv.imgproc.Imgproc.findContours_1(JJJII)V (0 bytes) @ 0xb491c5d0 [0xb491c560+0x70]
+J 427 C1 org.opencv.imgproc.Imgproc.findContours(Lorg/opencv/core/Mat;Ljava/util/List;Lorg/opencv/core/Mat;II)V (40 bytes) @ 0xb491c1f0 [0xb491c120+0xd0]
+J 436 C1 org.usfirst.frc.team2194.robot.HookPipeline.findContours(Lorg/opencv/core/Mat;ZLjava/util/List;)V (43 bytes) @ 0xb491f1f4 [0xb491f110+0xe4]
+J 437 C1 org.usfirst.frc.team2194.robot.HookPipeline.process(Lorg/opencv/core/Mat;)V (189 bytes) @ 0xb491f6dc [0xb491f4e0+0x1fc]
+J 422 C1 edu.wpi.first.wpilibj.vision.VisionRunner.runOnce()V (84 bytes) @ 0xb491b3cc [0xb491b2f0+0xdc]
+j  edu.wpi.first.wpilibj.vision.VisionRunner.runForever()V+30
+j  edu.wpi.first.wpilibj.vision.VisionThread$$Lambda$7.run()V+4
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0xacdaf000 JavaThread "Thread-4" daemon [_thread_in_native, id=2610, stack(0xac26e000,0xac2be000)]
+  0xacdb1400 JavaThread "WPILib Vision Thread" daemon [_thread_blocked, id=2609, stack(0xac2be000,0xac30e000)]
+  0xacdac400 JavaThread "Thread-3" daemon [_thread_in_native, id=2605, stack(0xac466000,0xac4b6000)]
+  0xacdaa400 JavaThread "WPILib Vision Thread" daemon [_thread_blocked, id=2604, stack(0xac4b6000,0xac506000)]
+=>0xacda5000 JavaThread "WPILib Vision Thread" daemon [_thread_in_native, id=2603, stack(0xac506000,0xac556000)]
+  0xacd52400 JavaThread "CSListener" daemon [_thread_in_native, id=2599, stack(0xac67a000,0xac6ba000)]
+  0xacd5a400 JavaThread "navXIOThread" [_thread_blocked, id=2598, stack(0xac748000,0xac798000)]
+  0xacd77000 JavaThread "Timer-2" [_thread_blocked, id=2597, stack(0xac798000,0xac7e8000)]
+  0xacd9e400 JavaThread "Timer-1" [_thread_blocked, id=2596, stack(0xac7e8000,0xac838000)]
+  0xacd9c400 JavaThread "Timer-0" [_thread_blocked, id=2595, stack(0xac838000,0xac888000)]
+  0xade04000 JavaThread "NTListener" daemon [_thread_in_native, id=2592, stack(0xac908000,0xac948000)]
+  0xacd16800 JavaThread "FRCDriverStation" [_thread_in_native, id=2589, stack(0xad4b4000,0xad504000)]
+  0xb6899400 JavaThread "Service Thread" daemon [_thread_blocked, id=2583, stack(0xadb28000,0xadb78000)]
+  0xb6896400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2582, stack(0xadb78000,0xadbf8000)]
+  0xb6895000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2581, stack(0xadbf8000,0xadc48000)]
+  0xb6873000 JavaThread "Finalizer" daemon [_thread_blocked, id=2580, stack(0xae164000,0xae1b4000)]
+  0xb6871800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2579, stack(0xb4624000,0xb4674000)]
+  0xb6805800 JavaThread "main" [_thread_blocked, id=2576, stack(0xb698b000,0xb69db000)]
+
+Other Threads:
+  0xb686d800 VMThread [stack: 0xb4674000,0xb46f4000] [id=2578]
+  0xb689a800 WatcherThread [stack: 0xadaa8000,0xadb28000] [id=2584]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 2048K, used 160K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   1% used [0xae600000, 0xae608080, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffe0, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2230K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  54% used [0xb0600000, 0xb082dae8, 0xb082dc00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+
+Card table byte_map: [0xb474f000,0xb4780000] byte_map_base: 0xb41dc000
+
+Polling page: 0xb6fe4000
+
+CodeCache: size=32768Kb used=1212Kb max_used=1212Kb free=31556Kb
+ bounds [0xb4800000, 0xb4930000, 0xb6800000]
+ total_blobs=800 nmethods=466 adapters=263
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 859.987 Thread 0xb6896400  461             java.lang.StackTraceElement::getClassName (5 bytes)
+Event: 859.988 Thread 0xb6896400 nmethod 461 0xb492c448 code [0xb492c530, 0xb492c5b8]
+Event: 859.988 Thread 0xb6896400  462             java.lang.StackTraceElement::isNativeMethod (15 bytes)
+Event: 859.989 Thread 0xb6896400 nmethod 462 0xb492c608 code [0xb492c6f0, 0xb492c788]
+Event: 932.578 Thread 0xb6896400  463 %           edu.wpi.first.wpilibj.vision.VisionRunner::runForever @ 23 (37 bytes)
+Event: 932.580 Thread 0xb6896400 nmethod 463% 0xb492c7c8 code [0xb492c8e0, 0xb492caac]
+Event: 940.380 Thread 0xb6896400  464 %           org.usfirst.frc.team2194.robot.Robot::lambda$robotInit$4 @ 34 (327 bytes)
+Event: 940.411 Thread 0xb6896400 nmethod 464% 0xb492cc08 code [0xb492ce50, 0xb492de14]
+Event: 1451.833 Thread 0xb6896400  465             edu.wpi.first.wpilibj.smartdashboard.SmartDashboard::putBoolean (9 bytes)
+Event: 1451.835 Thread 0xb6896400 nmethod 465 0xb492e888 code [0xb492e9b0, 0xb492ebc8]
+
+GC Heap History (10 events):
+Event: 1456.972 GC heap before
+{Heap before GC invocations=403 (full 1):
+ def new generation   total 2048K, used 2047K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K, 100% used [0xae600000, 0xae7e0000, 0xae7e0000)
+  from space 128K,  99% used [0xae800000, 0xae81fff0, 0xae820000)
+  to   space 128K,   0% used [0xae7e0000, 0xae7e0000, 0xae800000)
+ tenured generation   total 4096K, used 1993K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  48% used [0xb0600000, 0xb07f2578, 0xb07f2600, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+Event: 1456.979 GC heap after
+Heap after GC invocations=404 (full 1):
+ def new generation   total 2048K, used 127K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   0% used [0xae600000, 0xae600000, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffd8, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2061K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  50% used [0xb0600000, 0xb0803660, 0xb0803800, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+}
+Event: 1461.164 GC heap before
+{Heap before GC invocations=404 (full 1):
+ def new generation   total 2048K, used 2047K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K, 100% used [0xae600000, 0xae7e0000, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffd8, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2061K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  50% used [0xb0600000, 0xb0803660, 0xb0803800, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+Event: 1461.172 GC heap after
+Heap after GC invocations=405 (full 1):
+ def new generation   total 2048K, used 127K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   0% used [0xae600000, 0xae600000, 0xae7e0000)
+  from space 128K,  99% used [0xae800000, 0xae81fff0, 0xae820000)
+  to   space 128K,   0% used [0xae7e0000, 0xae7e0000, 0xae800000)
+ tenured generation   total 4096K, used 2106K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  51% used [0xb0600000, 0xb080ea78, 0xb080ec00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+}
+Event: 1465.362 GC heap before
+{Heap before GC invocations=405 (full 1):
+ def new generation   total 2048K, used 2047K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K, 100% used [0xae600000, 0xae7e0000, 0xae7e0000)
+  from space 128K,  99% used [0xae800000, 0xae81fff0, 0xae820000)
+  to   space 128K,   0% used [0xae7e0000, 0xae7e0000, 0xae800000)
+ tenured generation   total 4096K, used 2106K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  51% used [0xb0600000, 0xb080ea78, 0xb080ec00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+Event: 1465.372 GC heap after
+Heap after GC invocations=406 (full 1):
+ def new generation   total 2048K, used 127K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   0% used [0xae600000, 0xae600000, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffe0, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2147K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  52% used [0xb0600000, 0xb0818cf0, 0xb0818e00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+}
+Event: 1469.591 GC heap before
+{Heap before GC invocations=406 (full 1):
+ def new generation   total 2048K, used 2047K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K, 100% used [0xae600000, 0xae7e0000, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffe0, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2147K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  52% used [0xb0600000, 0xb0818cf0, 0xb0818e00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+Event: 1469.598 GC heap after
+Heap after GC invocations=407 (full 1):
+ def new generation   total 2048K, used 127K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   0% used [0xae600000, 0xae600000, 0xae7e0000)
+  from space 128K,  99% used [0xae800000, 0xae81fff8, 0xae820000)
+  to   space 128K,   0% used [0xae7e0000, 0xae7e0000, 0xae800000)
+ tenured generation   total 4096K, used 2188K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  53% used [0xb0600000, 0xb08230a0, 0xb0823200, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+}
+Event: 1473.773 GC heap before
+{Heap before GC invocations=407 (full 1):
+ def new generation   total 2048K, used 2047K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K, 100% used [0xae600000, 0xae7e0000, 0xae7e0000)
+  from space 128K,  99% used [0xae800000, 0xae81fff8, 0xae820000)
+  to   space 128K,   0% used [0xae7e0000, 0xae7e0000, 0xae800000)
+ tenured generation   total 4096K, used 2188K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  53% used [0xb0600000, 0xb08230a0, 0xb0823200, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+Event: 1473.779 GC heap after
+Heap after GC invocations=408 (full 1):
+ def new generation   total 2048K, used 127K [0xae600000, 0xae820000, 0xb0600000)
+  eden space 1920K,   0% used [0xae600000, 0xae600000, 0xae7e0000)
+  from space 128K,  99% used [0xae7e0000, 0xae7fffe0, 0xae800000)
+  to   space 128K,   0% used [0xae800000, 0xae800000, 0xae820000)
+ tenured generation   total 4096K, used 2230K [0xb0600000, 0xb0a00000, 0xb4600000)
+   the space 4096K,  54% used [0xb0600000, 0xb082dae8, 0xb082dc00, 0xb0a00000)
+ Metaspace       used 3361K, capacity 3468K, committed 3480K, reserved 4400K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 6.076 Thread 0xacdaf000 Exception <a 'java/security/PrivilegedActionException'> (0xae6b8af8) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 6.119 Thread 0xacdb1400 Exception <a 'java/security/PrivilegedActionException'> (0xae6b16d0) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 6.128 Thread 0xacdb1400 Exception <a 'java/security/PrivilegedActionException'> (0xae6ce430) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 6.134 Thread 0xacdb1400 Exception <a 'java/security/PrivilegedActionException'> (0xae6d2768) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 7.944 Thread 0xb6805800 Exception <a 'java/security/PrivilegedActionException'> (0xae786ea8) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 7.947 Thread 0xb6805800 Exception <a 'java/security/PrivilegedActionException'> (0xae789c48) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 7.950 Thread 0xb6805800 Exception <a 'java/security/PrivilegedActionException'> (0xae78ca30) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 16.610 Thread 0xacda5000 Exception <a 'java/lang/InterruptedException': sleep interrupted> (0xae608ad0) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 3076]
+Event: 16.635 Thread 0xacdac400 Exception <a 'java/security/PrivilegedActionException'> (0xae60b548) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 1248]
+Event: 346.041 Thread 0xacda5000 Exception <a 'java/lang/InterruptedException': sleep interrupted> (0xae63f0f0) thrown at [/HUDSON/workspace/8-2-build-elinux-arm-vfp-sflt/jdk8u6/612/hotspot/src/share/vm/prims/jvm.cpp, line 3076]
+
+Events (10 events):
+Event: 1456.972 Executing VM operation: GenCollectForAllocation
+Event: 1456.979 Executing VM operation: GenCollectForAllocation done
+Event: 1461.164 Executing VM operation: GenCollectForAllocation
+Event: 1461.172 Executing VM operation: GenCollectForAllocation done
+Event: 1465.362 Executing VM operation: GenCollectForAllocation
+Event: 1465.376 Executing VM operation: GenCollectForAllocation done
+Event: 1469.591 Executing VM operation: GenCollectForAllocation
+Event: 1469.598 Executing VM operation: GenCollectForAllocation done
+Event: 1473.772 Executing VM operation: GenCollectForAllocation
+Event: 1473.779 Executing VM operation: GenCollectForAllocation done
+
+
+Dynamic libraries:
+00008000-00009000 r-xp 00000000 00:0f 73582      /usr/local/frc/JRE/bin/java
+00010000-00011000 rw-p 00000000 00:0f 73582      /usr/local/frc/JRE/bin/java
+00011000-000ad000 rw-p 00000000 00:00 0          [heap]
+abac0000-abac1000 ---p 00000000 00:00 0 
+abac1000-abbe8000 rw-p 00000000 00:00 0          [stack:2697]
+abbe8000-abc00000 ---p 00000000 00:00 0 
+abc00000-abc58000 rw-p 00000000 00:00 0 
+abc58000-abd00000 ---p 00000000 00:00 0 
+abd00000-abdfb000 rw-p 00000000 00:00 0 
+abdfb000-abe00000 ---p 00000000 00:00 0 
+abe00000-abe59000 rw-p 00000000 00:00 0 
+abe59000-abf00000 ---p 00000000 00:00 0 
+abf00000-abfe2000 rw-p 00000000 00:00 0 
+abfe2000-ac000000 ---p 00000000 00:00 0 
+ac011000-ac012000 ---p 00000000 00:00 0 
+ac012000-ac051000 rw-p 00000000 00:00 0          [stack:2615]
+ac051000-ac052000 ---p 00000000 00:00 0 
+ac052000-ac091000 rw-p 00000000 00:00 0          [stack:2614]
+ac091000-ac092000 ---p 00000000 00:00 0 
+ac092000-ac1ee000 rw-p 00000000 00:00 0          [stack:2613]
+ac1ee000-ac1ef000 ---p 00000000 00:00 0 
+ac1ef000-ac22e000 rw-p 00000000 00:00 0          [stack:2612]
+ac22e000-ac22f000 ---p 00000000 00:00 0 
+ac22f000-ac26e000 rw-p 00000000 00:00 0          [stack:2611]
+ac26e000-ac271000 ---p 00000000 00:00 0 
+ac271000-ac2be000 rw-p 00000000 00:00 0          [stack:2610]
+ac2be000-ac2c1000 ---p 00000000 00:00 0 
+ac2c1000-ac30e000 rw-p 00000000 00:00 0          [stack:2609]
+ac30e000-ac334000 rw-s 00072000 00:06 7604       /dev/video1
+ac334000-ac35a000 rw-s 0004c000 00:06 7604       /dev/video1
+ac35a000-ac380000 rw-s 00026000 00:06 7604       /dev/video1
+ac380000-ac3a6000 rw-s 00000000 00:06 7604       /dev/video1
+ac3a6000-ac3a7000 ---p 00000000 00:00 0 
+ac3a7000-ac3e6000 rw-p 00000000 00:00 0          [stack:2608]
+ac3e6000-ac3e7000 ---p 00000000 00:00 0 
+ac3e7000-ac426000 rw-p 00000000 00:00 0          [stack:2607]
+ac426000-ac427000 ---p 00000000 00:00 0 
+ac427000-ac466000 rw-p 00000000 00:00 0          [stack:2606]
+ac466000-ac469000 ---p 00000000 00:00 0 
+ac469000-ac4b6000 rw-p 00000000 00:00 0          [stack:2605]
+ac4b6000-ac4b9000 ---p 00000000 00:00 0 
+ac4b9000-ac506000 rw-p 00000000 00:00 0          [stack:2604]
+ac506000-ac509000 ---p 00000000 00:00 0 
+ac509000-ac556000 rw-p 00000000 00:00 0          [stack:2603]
+ac556000-ac56f000 rw-s 0004b000 00:06 5398       /dev/video0
+ac56f000-ac588000 rw-s 00032000 00:06 5398       /dev/video0
+ac588000-ac5a1000 rw-s 00019000 00:06 5398       /dev/video0
+ac5a1000-ac5ba000 rw-s 00000000 00:06 5398       /dev/video0
+ac5ba000-ac5bb000 ---p 00000000 00:00 0 
+ac5bb000-ac5fa000 rw-p 00000000 00:00 0          [stack:2602]
+ac5fa000-ac5fb000 ---p 00000000 00:00 0 
+ac5fb000-ac63a000 rw-p 00000000 00:00 0          [stack:2601]
+ac63a000-ac63b000 ---p 00000000 00:00 0 
+ac63b000-ac67a000 rw-p 00000000 00:00 0          [stack:2600]
+ac67a000-ac67d000 ---p 00000000 00:00 0 
+ac67d000-ac6ba000 rw-p 00000000 00:00 0          [stack:2599]
+ac6ba000-ac737000 r-xp 00000000 00:0f 5923       /usr/local/frc/lib/libcscore.so
+ac737000-ac746000 ---p 0007d000 00:0f 5923       /usr/local/frc/lib/libcscore.so
+ac746000-ac748000 rw-p 0007c000 00:0f 5923       /usr/local/frc/lib/libcscore.so
+ac748000-ac74b000 ---p 00000000 00:00 0 
+ac74b000-ac798000 rw-p 00000000 00:00 0          [stack:2598]
+ac798000-ac79b000 ---p 00000000 00:00 0 
+ac79b000-ac7e8000 rw-p 00000000 00:00 0          [stack:2597]
+ac7e8000-ac7eb000 ---p 00000000 00:00 0 
+ac7eb000-ac838000 rw-p 00000000 00:00 0          [stack:2596]
+ac838000-ac83b000 ---p 00000000 00:00 0 
+ac83b000-ac888000 rw-p 00000000 00:00 0          [stack:2595]
+ac888000-ac889000 ---p 00000000 00:00 0 
+ac889000-ac8c8000 rw-p 00000000 00:00 0          [stack:2594]
+ac8c8000-ac8c9000 ---p 00000000 00:00 0 
+ac8c9000-ac908000 rw-p 00000000 00:00 0          [stack:2593]
+ac908000-ac90b000 ---p 00000000 00:00 0 
+ac90b000-ac948000 rw-p 00000000 00:00 0          [stack:2592]
+ac948000-ac976000 r-xp 00000000 00:0f 5945       /usr/local/frc/lib/libTalonSRXLib.so
+ac976000-ac986000 ---p 0002e000 00:0f 5945       /usr/local/frc/lib/libTalonSRXLib.so
+ac986000-ac987000 rw-p 0002e000 00:0f 5945       /usr/local/frc/lib/libTalonSRXLib.so
+ac987000-ac988000 ---p 00000000 00:00 0 
+ac988000-ac9c7000 rw-p 00000000 00:00 0          [stack:2591]
+ac9c7000-ac9c8000 ---p 00000000 00:00 0 
+ac9c8000-aca07000 rw-p 00000000 00:00 0          [stack:2590]
+aca07000-aca8d000 r-xp 00000000 00:0f 5924       /usr/local/frc/lib/libntcore.so
+aca8d000-aca9c000 ---p 00086000 00:0f 5924       /usr/local/frc/lib/libntcore.so
+aca9c000-aca9e000 rw-p 00085000 00:0f 5924       /usr/local/frc/lib/libntcore.so
+aca9e000-acb56000 r-xp 00000000 00:0f 5925       /usr/local/frc/lib/libopencv_calib3d.so.3.1
+acb56000-acb66000 ---p 000b8000 00:0f 5925       /usr/local/frc/lib/libopencv_calib3d.so.3.1
+acb66000-acb67000 r--p 000b8000 00:0f 5925       /usr/local/frc/lib/libopencv_calib3d.so.3.1
+acb67000-acb68000 rw-p 000b9000 00:0f 5925       /usr/local/frc/lib/libopencv_calib3d.so.3.1
+acb68000-acbd0000 r-xp 00000000 00:0f 5927       /usr/local/frc/lib/libopencv_features2d.so.3.1
+acbd0000-acbe0000 ---p 00068000 00:0f 5927       /usr/local/frc/lib/libopencv_features2d.so.3.1
+acbe0000-acbe2000 r--p 00068000 00:0f 5927       /usr/local/frc/lib/libopencv_features2d.so.3.1
+acbe2000-acbe4000 rw-p 0006a000 00:0f 5927       /usr/local/frc/lib/libopencv_features2d.so.3.1
+acbe4000-acc17000 r-xp 00000000 00:0f 5934       /usr/local/frc/lib/libopencv_objdetect.so.3.1
+acc17000-acc27000 ---p 00033000 00:0f 5934       /usr/local/frc/lib/libopencv_objdetect.so.3.1
+acc27000-acc28000 r--p 00033000 00:0f 5934       /usr/local/frc/lib/libopencv_objdetect.so.3.1
+acc28000-acc29000 rw-p 00034000 00:0f 5934       /usr/local/frc/lib/libopencv_objdetect.so.3.1
+acc29000-acc2d000 r-xp 00000000 00:0f 5929       /usr/local/frc/lib/libopencv_highgui.so.3.1
+acc2d000-acc3c000 ---p 00004000 00:0f 5929       /usr/local/frc/lib/libopencv_highgui.so.3.1
+acc3c000-acc3d000 r--p 00003000 00:0f 5929       /usr/local/frc/lib/libopencv_highgui.so.3.1
+acc3d000-acc3e000 rw-p 00004000 00:0f 5929       /usr/local/frc/lib/libopencv_highgui.so.3.1
+acc3e000-acc52000 r-xp 00000000 00:0f 5940       /usr/local/frc/lib/libopencv_videoio.so.3.1
+acc52000-acc62000 ---p 00014000 00:0f 5940       /usr/local/frc/lib/libopencv_videoio.so.3.1
+acc62000-acc63000 r--p 00014000 00:0f 5940       /usr/local/frc/lib/libopencv_videoio.so.3.1
+acc63000-acc64000 rw-p 00015000 00:0f 5940       /usr/local/frc/lib/libopencv_videoio.so.3.1
+acc64000-acc66000 rw-p 00000000 00:00 0 
+acc66000-accee000 r-xp 00000000 00:0f 5935       /usr/local/frc/lib/libopencv_photo.so.3.1
+accee000-accfd000 ---p 00088000 00:0f 5935       /usr/local/frc/lib/libopencv_photo.so.3.1
+accfd000-accff000 r--p 00087000 00:0f 5935       /usr/local/frc/lib/libopencv_photo.so.3.1
+accff000-acd00000 rw-p 00089000 00:0f 5935       /usr/local/frc/lib/libopencv_photo.so.3.1
+acd00000-acdee000 rw-p 00000000 00:00 0 
+acdee000-ace00000 ---p 00000000 00:00 0 
+ace0b000-ace80000 r-xp 00000000 00:0f 5930       /usr/local/frc/lib/libopencv_imgcodecs.so.3.1
+ace80000-ace90000 ---p 00075000 00:0f 5930       /usr/local/frc/lib/libopencv_imgcodecs.so.3.1
+ace90000-ace91000 r--p 00075000 00:0f 5930       /usr/local/frc/lib/libopencv_imgcodecs.so.3.1
+ace91000-ace92000 rw-p 00076000 00:0f 5930       /usr/local/frc/lib/libopencv_imgcodecs.so.3.1
+ace92000-aceb2000 rw-s 00200000 00:06 8517       /dev/ni/NiRioSrv:fpga:00000000\nirio_transport\0
+aceb2000-acf31000 r-xp 00000000 00:0f 2885       /usr/local/natinst/lib/libNiRioSrvEnumeratorPlugin.so.16.0.0
+acf31000-acf39000 ---p 0007f000 00:0f 2885       /usr/local/natinst/lib/libNiRioSrvEnumeratorPlugin.so.16.0.0
+acf39000-acf3e000 rw-p 0007f000 00:0f 2885       /usr/local/natinst/lib/libNiRioSrvEnumeratorPlugin.so.16.0.0
+acf47000-acf79000 r-xp 00000000 00:0f 5939       /usr/local/frc/lib/libopencv_video.so.3.1
+acf79000-acf88000 ---p 00032000 00:0f 5939       /usr/local/frc/lib/libopencv_video.so.3.1
+acf88000-acf89000 r--p 00031000 00:0f 5939       /usr/local/frc/lib/libopencv_video.so.3.1
+acf89000-acf8a000 rw-p 00032000 00:0f 5939       /usr/local/frc/lib/libopencv_video.so.3.1
+acf8a000-acff9000 r-xp 00000000 00:0f 5933       /usr/local/frc/lib/libopencv_ml.so.3.1
+acff9000-ad008000 ---p 0006f000 00:0f 5933       /usr/local/frc/lib/libopencv_ml.so.3.1
+ad008000-ad00a000 r--p 0006e000 00:0f 5933       /usr/local/frc/lib/libopencv_ml.so.3.1
+ad00a000-ad00b000 rw-p 00070000 00:0f 5933       /usr/local/frc/lib/libopencv_ml.so.3.1
+ad00b000-ad191000 r-xp 00000000 00:0f 5931       /usr/local/frc/lib/libopencv_imgproc.so.3.1
+ad191000-ad1a0000 ---p 00186000 00:0f 5931       /usr/local/frc/lib/libopencv_imgproc.so.3.1
+ad1a0000-ad1a5000 r--p 00185000 00:0f 5931       /usr/local/frc/lib/libopencv_imgproc.so.3.1
+ad1a5000-ad1a9000 rw-p 0018a000 00:0f 5931       /usr/local/frc/lib/libopencv_imgproc.so.3.1
+ad1a9000-ad23e000 rw-p 00000000 00:00 0 
+ad23e000-ad26f000 r-xp 00000000 00:0f 5928       /usr/local/frc/lib/libopencv_flann.so.3.1
+ad26f000-ad27e000 ---p 00031000 00:0f 5928       /usr/local/frc/lib/libopencv_flann.so.3.1
+ad27e000-ad280000 r--p 00030000 00:0f 5928       /usr/local/frc/lib/libopencv_flann.so.3.1
+ad280000-ad281000 rw-p 00032000 00:0f 5928       /usr/local/frc/lib/libopencv_flann.so.3.1
+ad281000-ad418000 r-xp 00000000 00:0f 5926       /usr/local/frc/lib/libopencv_core.so.3.1
+ad418000-ad428000 ---p 00197000 00:0f 5926       /usr/local/frc/lib/libopencv_core.so.3.1
+ad428000-ad42b000 r--p 00197000 00:0f 5926       /usr/local/frc/lib/libopencv_core.so.3.1
+ad42b000-ad42c000 rw-p 0019a000 00:0f 5926       /usr/local/frc/lib/libopencv_core.so.3.1
+ad42c000-ad42d000 rw-p 00000000 00:00 0 
+ad42d000-ad4a3000 r-xp 00000000 00:0f 5932       /usr/local/frc/lib/libopencv_java310.so
+ad4a3000-ad4b2000 ---p 00076000 00:0f 5932       /usr/local/frc/lib/libopencv_java310.so
+ad4b2000-ad4b3000 r--p 00075000 00:0f 5932       /usr/local/frc/lib/libopencv_java310.so
+ad4b3000-ad4b4000 rw-p 00076000 00:0f 5932       /usr/local/frc/lib/libopencv_java310.so
+ad4b4000-ad4b7000 ---p 00000000 00:00 0 
+ad4b7000-ad504000 rw-p 00000000 00:00 0          [stack:2589]
+ad504000-ad505000 ---p 00000000 00:00 0 
+ad505000-ad544000 rw-p 00000000 00:00 0          [stack:2588]
+ad544000-ad545000 ---p 00000000 00:00 0 
+ad545000-ad584000 rw-p 00000000 00:00 0          [stack:2587]
+ad584000-ad585000 ---p 00000000 00:00 0 
+ad585000-ad5c4000 rw-p 00000000 00:00 0          [stack:2585]
+ad5c4000-ad644000 rw-s 00000000 00:05 0          /SYSV020f0dbe (deleted)
+ad644000-ad64e000 r-xp 00000000 00:0f 2926       /usr/local/natinst/lib/libniriosession.so.16.0.0
+ad64e000-ad656000 ---p 0000a000 00:0f 2926       /usr/local/natinst/lib/libniriosession.so.16.0.0
+ad656000-ad657000 rw-p 0000a000 00:0f 2926       /usr/local/natinst/lib/libniriosession.so.16.0.0
+ad657000-ad669000 r-xp 00000000 00:0f 2979       /usr/local/natinst/lib/libniriodevenum.so.16.0.0
+ad669000-ad671000 ---p 00012000 00:0f 2979       /usr/local/natinst/lib/libniriodevenum.so.16.0.0
+ad671000-ad672000 rw-p 00012000 00:0f 2979       /usr/local/natinst/lib/libniriodevenum.so.16.0.0
+ad672000-ad755000 r-xp 00000000 00:0f 2934       /usr/local/natinst/lib/libNiRioSrv.so.16.0.0
+ad755000-ad75c000 ---p 000e3000 00:0f 2934       /usr/local/natinst/lib/libNiRioSrv.so.16.0.0
+ad75c000-ad762000 rw-p 000e2000 00:0f 2934       /usr/local/natinst/lib/libNiRioSrv.so.16.0.0
+ad762000-ad799000 r-xp 00000000 00:0f 2954       /usr/local/natinst/lib/libNiFpga.so.16.0.0
+ad799000-ad7a0000 ---p 00037000 00:0f 2954       /usr/local/natinst/lib/libNiFpga.so.16.0.0
+ad7a0000-ad7a1000 rw-p 00036000 00:0f 2954       /usr/local/natinst/lib/libNiFpga.so.16.0.0
+ad7a1000-ad7b7000 r-xp 00000000 00:0f 1760       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libGCBase_gcc-4.4-arm_v3_0_NI.so
+ad7b7000-ad7bf000 ---p 00016000 00:0f 1760       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libGCBase_gcc-4.4-arm_v3_0_NI.so
+ad7bf000-ad7c0000 rw-p 00016000 00:0f 1760       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libGCBase_gcc-4.4-arm_v3_0_NI.so
+ad7c0000-ad7cd000 r-xp 00000000 00:0f 2932       /usr/local/natinst/lib/libNiFpgaLv.so.16.0.0
+ad7cd000-ad7d4000 ---p 0000d000 00:0f 2932       /usr/local/natinst/lib/libNiFpgaLv.so.16.0.0
+ad7d4000-ad7d5000 rw-p 0000c000 00:0f 2932       /usr/local/natinst/lib/libNiFpgaLv.so.16.0.0
+ad7d5000-ad7df000 r-xp 00000000 00:0f 1765       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libMathParser_gcc-4.4-arm_v3_0_NI.so
+ad7df000-ad7e6000 ---p 0000a000 00:0f 1765       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libMathParser_gcc-4.4-arm_v3_0_NI.so
+ad7e6000-ad7e7000 rw-p 00009000 00:0f 1765       /opt/GenICam_v3_0_NI/bin/Linux32_ARM/libMathParser_gcc-4.4-arm_v3_0_NI.so
+ad7e7000-ad817000 r-xp 00000000 00:0f 3518       /usr/local/vxipnp/linux/lib/libvisa.so
+ad817000-ad81e000 ---p 00030000 00:0f 3518       /usr/local/vxipnp/linux/lib/libvisa.so
+ad81e000-ad81f000 rw-p 0002f000 00:0f 3518       /usr/local/vxipnp/linux/lib/libvisa.so
+ad81f000-ad82f000 rw-p 00000000 00:00 0 
+ad82f000-ad88a000 r-xp 00000000 00:0f 2813       /usr/local/frc/lib/libRoboRIO_FRC_ChipObject.so.17.0.0
+ad88a000-ad891000 ---p 0005b000 00:0f 2813       /usr/local/frc/lib/libRoboRIO_FRC_ChipObject.so.17.0.0
+ad891000-ad894000 rw-p 0005a000 00:0f 2813       /usr/local/frc/lib/libRoboRIO_FRC_ChipObject.so.17.0.0
+ad894000-ad908000 r-xp 00000000 00:0f 2814       /usr/local/frc/lib/libFRC_NetworkCommunication.so.17.0.0
+ad908000-ad910000 ---p 00074000 00:0f 2814       /usr/local/frc/lib/libFRC_NetworkCommunication.so.17.0.0
+ad910000-ad913000 rw-p 00074000 00:0f 2814       /usr/local/frc/lib/libFRC_NetworkCommunication.so.17.0.0
+ad913000-ad955000 r-xp 00000000 00:0f 5922       /usr/local/frc/lib/libHALAthena.so
+ad955000-ad965000 ---p 00042000 00:0f 5922       /usr/local/frc/lib/libHALAthena.so
+ad965000-ad96b000 rw-p 00042000 00:0f 5922       /usr/local/frc/lib/libHALAthena.so
+ad96b000-ada97000 r-xp 00000000 00:0f 5942       /usr/local/frc/lib/libwpilibJavaJNI.so
+ada97000-adaa7000 ---p 0012c000 00:0f 5942       /usr/local/frc/lib/libwpilibJavaJNI.so
+adaa7000-adaa8000 rw-p 0012c000 00:0f 5942       /usr/local/frc/lib/libwpilibJavaJNI.so
+adaa8000-adaa9000 ---p 00000000 00:00 0 
+adaa9000-adb28000 rw-p 00000000 00:00 0          [stack:2584]
+adb28000-adb2b000 ---p 00000000 00:00 0 
+adb2b000-adb78000 rw-p 00000000 00:00 0          [stack:2583]
+adb78000-adb7b000 ---p 00000000 00:00 0 
+adb7b000-adbf8000 rw-p 00000000 00:00 0          [stack:2582]
+adbf8000-adbfb000 ---p 00000000 00:00 0 
+adbfb000-adc48000 rw-p 00000000 00:00 0          [stack:2581]
+adc48000-addd8000 r-xp 00000000 00:0f 1333       /lib/libnss_niauth.so.16.0.0
+addd8000-adddf000 ---p 00190000 00:0f 1333       /lib/libnss_niauth.so.16.0.0
+adddf000-addfd000 rw-p 0018f000 00:0f 1333       /lib/libnss_niauth.so.16.0.0
+addfd000-adef2000 rw-p 00000000 00:00 0 
+adef2000-adf00000 ---p 00000000 00:00 0 
+adf07000-adf1c000 r-xp 00000000 00:0f 5943       /usr/local/frc/lib/libwpiutil.so
+adf1c000-adf2b000 ---p 00015000 00:0f 5943       /usr/local/frc/lib/libwpiutil.so
+adf2b000-adf2c000 rw-p 00014000 00:0f 5943       /usr/local/frc/lib/libwpiutil.so
+adf2c000-adfed000 r-xp 00000000 00:0f 2333       /usr/lib/libstdc++.so.6.0.20
+adfed000-adff4000 ---p 000c1000 00:0f 2333       /usr/lib/libstdc++.so.6.0.20
+adff4000-adff8000 r--p 000c0000 00:0f 2333       /usr/lib/libstdc++.so.6.0.20
+adff8000-adffa000 rw-p 000c4000 00:0f 2333       /usr/lib/libstdc++.so.6.0.20
+adffa000-ae0fd000 rw-p 00000000 00:00 0 
+ae0fd000-ae100000 ---p 00000000 00:00 0 
+ae108000-ae109000 r-xp 00000000 00:0f 2820       /usr/local/frc/lib/libspi.so.1.0.0
+ae109000-ae110000 ---p 00001000 00:0f 2820       /usr/local/frc/lib/libspi.so.1.0.0
+ae110000-ae111000 rw-p 00000000 00:0f 2820       /usr/local/frc/lib/libspi.so.1.0.0
+ae111000-ae122000 r-xp 00000000 00:0f 1398       /lib/libnsl-2.21.so
+ae122000-ae129000 ---p 00011000 00:0f 1398       /lib/libnsl-2.21.so
+ae129000-ae12a000 r--p 00010000 00:0f 1398       /lib/libnsl-2.21.so
+ae12a000-ae12b000 rw-p 00011000 00:0f 1398       /lib/libnsl-2.21.so
+ae12b000-ae12d000 rw-p 00000000 00:00 0 
+ae12d000-ae164000 r--p 00000000 00:0f 2322       /usr/lib/locale/L1/LC_CTYPE
+ae164000-ae167000 ---p 00000000 00:00 0 
+ae167000-ae51a000 rw-p 00000000 00:00 0          [stack:2580]
+ae51a000-ae600000 ---p 00000000 00:00 0 
+ae600000-ae820000 rw-p 00000000 00:00 0 
+ae820000-b0600000 ---p 00000000 00:00 0 
+b0600000-b0a00000 rw-p 00000000 00:00 0 
+b0a00000-b4600000 ---p 00000000 00:00 0 
+b4605000-b4607000 r-xp 00000000 00:0f 2823       /usr/local/frc/lib/libi2c.so.2.0.0
+b4607000-b460e000 ---p 00002000 00:0f 2823       /usr/local/frc/lib/libi2c.so.2.0.0
+b460e000-b460f000 rw-p 00001000 00:0f 2823       /usr/local/frc/lib/libi2c.so.2.0.0
+b460f000-b4615000 r-xp 00000000 00:0f 1381       /lib/libnss_compat-2.21.so
+b4615000-b461c000 ---p 00006000 00:0f 1381       /lib/libnss_compat-2.21.so
+b461c000-b461d000 r--p 00005000 00:0f 1381       /lib/libnss_compat-2.21.so
+b461d000-b461e000 rw-p 00006000 00:0f 1381       /lib/libnss_compat-2.21.so
+b4624000-b4627000 ---p 00000000 00:00 0 
+b4627000-b4674000 rw-p 00000000 00:00 0          [stack:2579]
+b4674000-b4675000 ---p 00000000 00:00 0 
+b4675000-b4751000 rw-p 00000000 00:00 0          [stack:2578]
+b4751000-b475f000 ---p 00000000 00:00 0 
+b475f000-b4761000 rw-p 00000000 00:00 0 
+b4761000-b477f000 ---p 00000000 00:00 0 
+b477f000-b4785000 rw-p 00000000 00:00 0 
+b4785000-b4800000 ---p 00000000 00:00 0 
+b4800000-b4930000 rwxp 00000000 00:00 0 
+b4930000-b6800000 ---p 00000000 00:00 0 
+b6800000-b6900000 rw-p 00000000 00:00 0 
+b6901000-b6902000 rw-p 00000000 00:00 0 
+b6902000-b6903000 r--p 00000000 00:0f 2327       /usr/lib/locale/L1/LC_NUMERIC
+b6903000-b6904000 r--p 00000000 00:0f 2320       /usr/lib/locale/L1/LC_TIME
+b6904000-b6909000 r--p 00000000 00:0f 2316       /usr/lib/locale/L1/LC_COLLATE
+b6909000-b690a000 r--p 00000000 00:0f 2325       /usr/lib/locale/L1/LC_MONETARY
+b690a000-b690b000 r--p 00000000 00:0f 2318       /usr/lib/locale/L1/LC_MESSAGES/SYS_LC_MESSAGES
+b690b000-b690c000 r--p 00000000 00:0f 2323       /usr/lib/locale/L1/LC_PAPER
+b690c000-b690f000 rw-p 00000000 00:00 0 
+b690f000-b692d000 ---p 00000000 00:00 0 
+b692d000-b693f000 r-xp 00000000 00:0f 73606      /usr/local/frc/JRE/lib/arm/libzip.so
+b693f000-b6946000 ---p 00012000 00:0f 73606      /usr/local/frc/JRE/lib/arm/libzip.so
+b6946000-b6947000 rw-p 00011000 00:0f 73606      /usr/local/frc/JRE/lib/arm/libzip.so
+b6947000-b6963000 r-xp 00000000 00:0f 73598      /usr/local/frc/JRE/lib/arm/libjava.so
+b6963000-b696b000 ---p 0001c000 00:0f 73598      /usr/local/frc/JRE/lib/arm/libjava.so
+b696b000-b696c000 rw-p 0001c000 00:0f 73598      /usr/local/frc/JRE/lib/arm/libjava.so
+b696c000-b6973000 r-xp 00000000 00:0f 73605      /usr/local/frc/JRE/lib/arm/libverify.so
+b6973000-b697b000 ---p 00007000 00:0f 73605      /usr/local/frc/JRE/lib/arm/libverify.so
+b697b000-b697c000 rw-p 00007000 00:0f 73605      /usr/local/frc/JRE/lib/arm/libverify.so
+b697c000-b6982000 r-xp 00000000 00:0f 1382       /lib/librt-2.21.so
+b6982000-b6989000 ---p 00006000 00:0f 1382       /lib/librt-2.21.so
+b6989000-b698a000 r--p 00005000 00:0f 1382       /lib/librt-2.21.so
+b698a000-b698b000 rw-p 00006000 00:0f 1382       /lib/librt-2.21.so
+b698b000-b698e000 ---p 00000000 00:00 0 
+b698e000-b69db000 rw-p 00000000 00:00 0          [stack:2576]
+b69db000-b6a46000 r-xp 00000000 00:0f 1416       /lib/libm-2.21.so
+b6a46000-b6a4d000 ---p 0006b000 00:0f 1416       /lib/libm-2.21.so
+b6a4d000-b6a4e000 r--p 0006a000 00:0f 1416       /lib/libm-2.21.so
+b6a4e000-b6a4f000 rw-p 0006b000 00:0f 1416       /lib/libm-2.21.so
+b6a4f000-b6dd5000 r-xp 00000000 00:0f 73591      /usr/local/frc/JRE/lib/arm/client/libjvm.so
+b6dd5000-b6ddd000 ---p 00386000 00:0f 73591      /usr/local/frc/JRE/lib/arm/client/libjvm.so
+b6ddd000-b6e07000 rw-p 00386000 00:0f 73591      /usr/local/frc/JRE/lib/arm/client/libjvm.so
+b6e07000-b6e29000 rw-p 00000000 00:00 0 
+b6e29000-b6e45000 r-xp 00000000 00:0f 1390       /lib/libgcc_s.so.1
+b6e45000-b6e4c000 ---p 0001c000 00:0f 1390       /lib/libgcc_s.so.1
+b6e4c000-b6e4d000 rw-p 0001b000 00:0f 1390       /lib/libgcc_s.so.1
+b6e4d000-b6f74000 r-xp 00000000 00:0f 1751       /lib/libc-2.21.so
+b6f74000-b6f7c000 ---p 00127000 00:0f 1751       /lib/libc-2.21.so
+b6f7c000-b6f7e000 r--p 00127000 00:0f 1751       /lib/libc-2.21.so
+b6f7e000-b6f7f000 rw-p 00129000 00:0f 1751       /lib/libc-2.21.so
+b6f7f000-b6f83000 rw-p 00000000 00:00 0 
+b6f83000-b6f85000 r-xp 00000000 00:0f 1392       /lib/libdl-2.21.so
+b6f85000-b6f8c000 ---p 00002000 00:0f 1392       /lib/libdl-2.21.so
+b6f8c000-b6f8d000 r--p 00001000 00:0f 1392       /lib/libdl-2.21.so
+b6f8d000-b6f8e000 rw-p 00002000 00:0f 1392       /lib/libdl-2.21.so
+b6f8e000-b6f9e000 r-xp 00000000 00:0f 73594      /usr/local/frc/JRE/lib/arm/jli/libjli.so
+b6f9e000-b6f9f000 rw-p 00010000 00:0f 73594      /usr/local/frc/JRE/lib/arm/jli/libjli.so
+b6f9f000-b6fb4000 r-xp 00000000 00:0f 1342       /lib/libpthread-2.21.so
+b6fb4000-b6fbb000 ---p 00015000 00:0f 1342       /lib/libpthread-2.21.so
+b6fbb000-b6fbc000 r--p 00014000 00:0f 1342       /lib/libpthread-2.21.so
+b6fbc000-b6fbd000 rw-p 00015000 00:0f 1342       /lib/libpthread-2.21.so
+b6fbd000-b6fbf000 rw-p 00000000 00:00 0 
+b6fbf000-b6fdf000 r-xp 00000000 00:0f 1340       /lib/ld-2.21.so
+b6fdf000-b6fe0000 r--p 00000000 00:0f 2319       /usr/lib/locale/L1/LC_NAME
+b6fe0000-b6fe1000 r--p 00000000 00:0f 2321       /usr/lib/locale/L1/LC_ADDRESS
+b6fe1000-b6fe2000 r--p 00000000 00:0f 2324       /usr/lib/locale/L1/LC_TELEPHONE
+b6fe2000-b6fe3000 r--p 00000000 00:0f 2326       /usr/lib/locale/L1/LC_MEASUREMENT
+b6fe3000-b6fe4000 r--p 00000000 00:0f 2315       /usr/lib/locale/L1/LC_IDENTIFICATION
+b6fe4000-b6fe5000 r--p 00000000 00:00 0 
+b6fe5000-b6fe6000 rw-p 00000000 00:00 0 
+b6fe6000-b6fe7000 r--p 0001f000 00:0f 1340       /lib/ld-2.21.so
+b6fe7000-b6fe8000 rw-p 00020000 00:0f 1340       /lib/ld-2.21.so
+bef94000-befb5000 rw-p 00000000 00:00 0          [stack]
+befe3000-befe4000 r-xp 00000000 00:00 0          [sigpage]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+VM Arguments:
+jvm_args: -Djava.library.path=/usr/local/frc/lib/ 
+java_command: /home/lvuser/FRCUserProgram.jar
+java_class_path (initial): /home/lvuser/FRCUserProgram.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/frc/bin:/usr/local/natinst/bin
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x318cad], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x318cad], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x277a09], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x277a09], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x277a09], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x277a09], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x277abd], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x277d8d], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x277d8d], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x277d8d], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x277d8d], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Linux
+uname:Linux 4.1.15-rt17-ni-4.0.0f1 #1 SMP PREEMPT RT Fri May 27 10:41:15 CDT 2016 armv7l
+libc:glibc 2.21 NPTL 2.21 
+rlimit: STACK 256k, CORE 2048k, NPROC 1961, NOFILE 4096, AS infinity
+load average:4.93 5.11 4.84
+
+/proc/meminfo:
+MemTotal:         251528 kB
+MemFree:           59460 kB
+MemAvailable:     129784 kB
+Buffers:               0 kB
+Cached:           100604 kB
+SwapCached:            0 kB
+Active:            79364 kB
+Inactive:          35144 kB
+Active(anon):      44292 kB
+Inactive(anon):      656 kB
+Active(file):      35072 kB
+Inactive(file):    34488 kB
+Unevictable:       43240 kB
+Mlocked:           43240 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         251528 kB
+LowFree:           59460 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         57196 kB
+Mapped:            61744 kB
+Shmem:              1044 kB
+Slab:              19460 kB
+SReclaimable:       9044 kB
+SUnreclaim:        10416 kB
+KernelStack:        2288 kB
+PageTables:         1424 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      216312 kB
+Committed_AS:     156556 kB
+VmallocTotal:     761856 kB
+VmallocUsed:       21560 kB
+VmallocChunk:     627200 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+
+
+CPU:total 2 (ARMv7), vfp
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv7 Processor rev 0 (v7l)
+BogoMIPS	: 1332.01
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpd32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x3
+CPU part	: 0xc09
+CPU revision	: 0
+
+processor	: 1
+model name	: ARMv7 Processor rev 0 (v7l)
+BogoMIPS	: 1332.01
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpd32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x3
+CPU part	: 0xc09
+CPU revision	: 0
+
+Hardware	: Xilinx Zynq Platform
+Revision	: 0003
+Serial		: 0000000000000000
+
+
+Memory: 4k page, physical 251528k(59460k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) Embedded Client VM (25.6-b23) for linux-arm-vfp-sflt JRE (1.8.0_06-b23), built on Jun 12 2014 09:40:18 by "java_re" with gcc 4.7.2 20120731 (prerelease)
+
+time: Mon Jul 24 19:53:26 2017
+elapsed time: 1473 seconds
+
